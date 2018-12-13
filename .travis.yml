@@ -15,4 +15,5 @@ before_install:
   - docker pull moussavdb/build-nodejs
 
 script:
+  - docker run -v $PWD:/src -w /src moussavdb/build-nodejs yarn install
   - docker run -v $PWD:/src -w /src moussavdb/build-nodejs ng build --prod
