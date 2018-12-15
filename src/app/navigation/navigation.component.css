@@ -1,0 +1,41 @@
+nav.navbar {
+  background-color: #000;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.tooltip-inner {
+  background-color: #000;
+}
+
+a.navbar-brand {
+  color: white;
+}
+
+a.nav-link {
+  color:white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+}
+
+a.nav-link:hover {
+  background: #F00;
+}
+
+a.nav-link.active {
+  background: #F00;
+}
+
+img.logo {
+  width: 60px;
+  height: 60px;
+}
+
+img.icon {
+  width: 52px;
+  height: 52px;
+  padding:5px;
+}

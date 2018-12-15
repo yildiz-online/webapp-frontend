@@ -24,9 +24,7 @@
 
 import {Component, TemplateRef} from '@angular/core'
 
-import {TranslateService} from 'ng2-translate';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import {AlertService} from "./alert.service";
 import {AjaxResponse} from "./app.module";
 
 
@@ -47,12 +45,7 @@ export class AppComponent {
 
     language: String;
 
-    constructor(
-        private translateService: TranslateService,
-        private alertService: AlertService,
-        private http: HttpClient) {
-        this.translateService.setDefaultLang('fr');
-        this.setFrench();
+    constructor(private http: HttpClient) {
     }
 
     openModal(template: TemplateRef<any>) {
@@ -78,29 +71,19 @@ export class AppComponent {
             (data: AjaxResponse) => {
                 this.closeModal();
                 for(let notification of data.notifications) {
-                    this.alertService.notify(notification.type, notification.content);
+                    //this.alertService.notify(notification.type, notification.content);
                 }
 
             },
             (err: HttpErrorResponse) => {
                 if(err.status === 422) {
                     for(let notification of (err.error as AjaxResponse).notifications) {
-                        this.alertService.notify(notification.type, notification.content);
+                        //this.alertService.notify(notification.type, notification.content);
                     }
                 } else {
-                    this.alertService.error(err.message);
+                    //this.alertService.error(err.message);
                     this.closeModal();
                 }
             });
-    }
-
-    setFrench() {
-        this.translateService.use('fr');
-        this.language = 'fr';
-    }
-
-    setEnglish() {
-        this.translateService.use('en');
-        this.language = 'en';
     }
 }

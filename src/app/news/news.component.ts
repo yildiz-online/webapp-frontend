@@ -28,7 +28,7 @@ import {HttpClient} from "@angular/common/http";
 import {INews} from "./news";
 
 @Component({
-  selector: 'privacy',
+  selector: 'news',
   templateUrl: 'news.component.html',
   styleUrls: ['news.component.css'],
 })

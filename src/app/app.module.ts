@@ -28,28 +28,33 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from "./app.component";
-import {NewsModule} from "./news/news.module";
-import {NewsComponent} from "./news/news.component";
 
-import {AlertService} from "./alert.service";
+import {NewsComponent} from "./news/news.component";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {NavigationComponent} from "./navigation/navigation.component";
+import {CreateAccountComponent} from "./create-account/create-account.component";
 
 const routes: Routes = [
     { path: '', component: NewsComponent, pathMatch: 'full' },
-    { path: 'news', component: NewsComponent }
+    { path: 'news', component: NewsComponent },
+    { path: 'create-account', component: CreateAccountComponent}
 ];
 
 @NgModule({
   declarations: [
-      AppComponent
+      AppComponent,
+      NewsComponent,
+      NavigationComponent,
+      CreateAccountComponent
   ],
   imports: [
       BrowserModule,
       HttpClientModule,
+      NgbModule,
       RouterModule.forRoot(routes),
-      NewsModule
   ],
   bootstrap: [AppComponent],
-  providers: [AlertService]
+  providers: []
 })
 
 export class AppModule {}
