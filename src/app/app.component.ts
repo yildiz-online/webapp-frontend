@@ -25,8 +25,6 @@
 import {Component, TemplateRef} from '@angular/core'
 
 import {TranslateService} from 'ng2-translate';
-import {BsModalService} from "ngx-bootstrap";
-import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {AlertService} from "./alert.service";
 import {AjaxResponse} from "./app.module";
@@ -35,13 +33,10 @@ import {AjaxResponse} from "./app.module";
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    providers: [BsModalService]
+    styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
-
-    modalRef: BsModalRef;
 
     config = {
         animated: true,
@@ -54,7 +49,6 @@ export class AppComponent {
 
     constructor(
         private translateService: TranslateService,
-        private modalService: BsModalService,
         private alertService: AlertService,
         private http: HttpClient) {
         this.translateService.setDefaultLang('fr');
@@ -62,11 +56,10 @@ export class AppComponent {
     }
 
     openModal(template: TemplateRef<any>) {
-        this.modalRef = this.modalService.show(template, this.config);
+
     }
 
     closeModal() {
-        this.modalRef.hide();
         //Additional code for a bug with ngx-bootstrap modal, remove once fixed.
         //https://github.com/valor-software/ngx-bootstrap/issues/1139
         document.body.classList.remove('modal-open');

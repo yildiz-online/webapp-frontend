@@ -22,64 +22,15 @@
  *
  */
 
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
-
-import {AppComponent} from "./app.component";
-import {NewsModule} from "./news/news.module";
-import {NewsComponent} from "./news/news.component";
-
-import {AlertService} from "./alert.service";
-
-const routes: Routes = [
-    { path: '', component: NewsComponent, pathMatch: 'full' },
-    { path: 'news', component: NewsComponent }
-];
+import {ProfileComponent} from "./profile.component";
+import {NgModule} from "@angular/core/";
 
 @NgModule({
-  declarations: [
-      AppComponent
-  ],
-  imports: [
-      BrowserModule,
-      HttpClientModule,
-      RouterModule.forRoot(routes),
-      NewsModule
-  ],
-  bootstrap: [AppComponent],
-  providers: [AlertService]
+    declarations: [
+        ProfileComponent
+    ],
+    imports: [
+    ]
 })
 
-export class AppModule {}
-
-export class Notification {
-
-   private _title: string;
-
-   private _content: string;
-
-   private _type: string;
-
-   get title(): string {
-       return this._title;
-   }
-
-   get content(): string {
-       return this._content;
-   }
-
-   get type(): string {
-       return this._type;
-   }
-}
-
-export class AjaxResponse {
-
-   private _notifications: Notification[];
-
-    get notifications(): Notification[] {
-        return this._notifications;
-    }
-}
+export class ProfileModule {}
