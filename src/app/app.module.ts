@@ -33,10 +33,12 @@ import {NewsComponent} from "./news/news.component";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {NavigationComponent} from "./navigation/navigation.component";
 import {CreateAccountComponent} from "./create-account/create-account.component";
+import {ProfileComponent} from "./account/profile.component";
 
 const routes: Routes = [
     { path: '', component: NewsComponent, pathMatch: 'full' },
     { path: 'news', component: NewsComponent },
+    { path: 'profile', component: ProfileComponent},
     { path: 'create-account', component: CreateAccountComponent}
 ];
 
@@ -45,7 +47,8 @@ const routes: Routes = [
       AppComponent,
       NewsComponent,
       NavigationComponent,
-      CreateAccountComponent
+      CreateAccountComponent,
+      ProfileComponent
   ],
   imports: [
       BrowserModule,
