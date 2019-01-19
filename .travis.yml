@@ -8,6 +8,11 @@ git:
 dist:
   xenial
 
+cache:
+  directories:
+    - $HOME/.npm
+    - $PWD/node_modules
+
 services:
   - docker
 
@@ -15,5 +20,5 @@ before_install:
   - docker pull moussavdb/build-nodejs
 
 script:
-  - docker run -v $PWD:/src -w /src moussavdb/build-nodejs yarn install
-  - docker run -v $PWD:/src -w /src moussavdb/build-nodejs ng build --prod
+  - docker run -v $PWD:/src -v $HOME/.npm:/root/.npm -v $PWD/node_modules:/src/node_modules -w /src moussavdb/build-nodejs yarn install
+  - docker run -v $PWD:/src -v $HOME/.npm:/root/.npm -v $PWD/node_modules:/src/node_modules -w /src moussavdb/build-nodejs ng build --prod
