@@ -1,5 +1,5 @@
 target
-webapp-backend.iml
+webapp-frontend.iml
 node_modules
 derby.log
 temp
