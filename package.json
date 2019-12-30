@@ -25,7 +25,7 @@
     "@angular/router": "8.0.3",
     "@ng-bootstrap/ng-bootstrap": "5.1.4",
     "core-js": "3.6.1",
-    "rxjs": "6.5.3",
+    "rxjs": "6.5.4",
     "rxjs-compat": "6.5.4",
     "zone.js": "0.9.1",
     "ng2-translate": "5.0.0"
