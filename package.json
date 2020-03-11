@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "9.0.2",
     "@angular/router": "9.0.2",
     "@ng-bootstrap/ng-bootstrap": "5.3.0",
-    "@angular/language-service": "9.0.5",
+    "@angular/language-service": "9.0.6",
     "core-js": "3.6.4",
     "rxjs": "6.5.4",
     "rxjs-compat": "6.5.4",
