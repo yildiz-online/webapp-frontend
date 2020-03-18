@@ -27,7 +27,7 @@
     "core-js": "3.6.4",
     "rxjs": "6.5.4",
     "rxjs-compat": "6.5.4",
-    "zone.js": "0.10.2",
+    "zone.js": "0.10.3",
     "ng2-translate": "5.0.0"
   },
   "devDependencies": {
