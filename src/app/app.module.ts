@@ -30,7 +30,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from "./app.component";
 
 import {NewsComponent} from "./news/news.component";
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {NavigationComponent} from "./navigation/navigation.component";
 import {CreateAccountComponent} from "./create-account/create-account.component";
 import {ProfileComponent} from "./account/profile.component";
@@ -53,7 +52,6 @@ const routes: Routes = [
   imports: [
       BrowserModule,
       HttpClientModule,
-      NgbModule,
       RouterModule.forRoot(routes),
   ],
   bootstrap: [AppComponent],
